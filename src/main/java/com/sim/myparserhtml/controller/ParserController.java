@@ -1,6 +1,6 @@
 package com.sim.myparserhtml.controller;
 
-import com.sim.myparserhtml.dto.ParserResponseDto;
+import com.sim.myparserhtml.entity.Statistic;
 import com.sim.myparserhtml.service.ParserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,12 @@ public class ParserController {
     private final ParserService parserService;
 
     @GetMapping("/{url}")
-    public ParserResponseDto parseHtmlPage(@PathVariable String url){
-        return parserService.parsePage(url);
+    public void parseHtmlPage(@PathVariable String url){
+//        return parserService.parsePage(url);
     }
 
     @GetMapping("/get")
-    public List<ParserResponseDto> getAllStatistic(){
+    public List<Statistic> getAllStatistic(){
         return parserService.getAllStatistics();
     }
 }
