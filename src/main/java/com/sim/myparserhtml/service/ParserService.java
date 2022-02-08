@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ParserService {
     void parsePage(String url);
-    List<Statistic> getAllStatistics();
+    List<ParserResponseDto> getAllStatistics();
 }

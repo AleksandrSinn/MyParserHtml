@@ -8,7 +8,6 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
 @Table(name = "words_statistic")
 public class Statistic {
     @Id
@@ -17,11 +16,10 @@ public class Statistic {
     private String word;
     @Column(name = "word_counter")
     private Integer wordCounter;
-    @Enumerated(EnumType.STRING)
-    private State state;
+    private String url;
 
-    public enum State{
-        OPEN,
-        CLOSED
+    @Override
+    public String toString() {
+        return word + " - " + wordCounter.toString();
     }
 }

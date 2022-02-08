@@ -1,5 +1,6 @@
 package com.sim.myparserhtml.controller;
 
+import com.sim.myparserhtml.dto.ParserResponseDto;
 import com.sim.myparserhtml.entity.Statistic;
 import com.sim.myparserhtml.service.ParserService;
 import lombok.RequiredArgsConstructor;
@@ -18,11 +19,11 @@ public class ParserController {
 
     @GetMapping("/{url}")
     public void parseHtmlPage(@PathVariable String url){
-//        return parserService.parsePage(url);
+        parserService.parsePage(url);
     }
 
     @GetMapping("/get")
-    public List<Statistic> getAllStatistic(){
+    public List<ParserResponseDto> getAllStatistic(){
         return parserService.getAllStatistics();
     }
 }

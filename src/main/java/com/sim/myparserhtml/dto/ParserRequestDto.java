@@ -11,5 +11,4 @@ import lombok.Setter;
 public class ParserRequestDto {
     private String word;
     private Integer wordCounter;
-    private Statistic.State state = Statistic.State.OPEN;
 }

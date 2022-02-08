@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ParserRepository extends JpaRepository<Statistic, Long> {
-
-    List<Statistic> getStatisticsByState(Statistic.State state);
+    List<Statistic>findAllByUrl(String url);
 }
